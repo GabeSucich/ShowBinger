@@ -36,9 +36,16 @@ router.get('/api/shows/all', (req, res) => {
 
 router.get('/', (req, res) => {
     Show.getAllShows(data => {
+        var totalTime = 0
+        for (const show of data) {
+            console.log(show)
+            if (show.watched) {
+                totalTime += show.runtime
+            }
+        }
         res.render("index", {
-            shows: data
-
+            shows: data,
+            time: totalTime
         })
     })
 })
