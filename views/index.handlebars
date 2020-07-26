@@ -3,12 +3,47 @@
         <div class="col s12">
             <h3 class="center=align">Keep track of shows you need to binge over quarantine!</h3>
         </div>
+    </div>
+    <div class="row">
         <div class="col s6 m6 l6">
             {{#each shows}}
-                {{#unless watched}}
-                    <p>Title: {{title}}</p>
-                {{/unless}}
+            {{#unless watched}}
+            <div id={{id}}>
+                <p>Title: {{title}}</p>
+                <p>Seasons: {{seasons}}</p>
+                <p>Approximate TV time: {{runtime}} hours</p>
+                <button class="binged">Show Binged!</button>
+            </div>
+            {{/unless}}
             {{/each}}
         </div>
+        <div class="col s6 m6 l6">
+            {{#each shows}}
+            {{#if watched}}
+            <div id={{id}}>
+                <p>Title: {{title}}</p>
+                <p>Seasons: {{seasons}}</p>
+                <button class="remove">Remove from Favorites</button>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+
     </div>
+    <div class="row">
+
+        <div class="col s12 m8 l8 offset-m2 offset-l2">
+
+            <form class="new-show">
+                <input id="title" placeholder="Show Title">
+                <input id="seasons" placeholder="Number of Seasons">
+                <input id="episodes" placeholder="Episodes per Season">
+                <input id="minutes" placeholder="Minutes per Episode">
+                <button type="submit" id="add-btn">Add Show To Watchlist</button>
+            </form>
+        </div>
+
+    </div>
+
+
 </div>

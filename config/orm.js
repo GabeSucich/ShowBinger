@@ -19,7 +19,7 @@ var orm = {
 
     addNew: function(tableName, colArr, valArr, cb) {
         
-        query = "INSERT INTO " + tableName +  "SET " + conditionQuestionMarks(colArr.length)
+        query = "INSERT INTO " + tableName +  " SET " + conditionQuestionMarks(colArr.length)
         connection.query(query, combineConditions(colArr, valArr), (err, data) => {
             if (err) throw err
             cb(data)
@@ -34,7 +34,7 @@ var orm = {
     },
 
     deleteByAttribute: function(tableName, condName, condAttr, cb) {
-        connection.query("DELETE FROM ?? WHERE ?? = ?", [tableName, condName, condAttr], (edd, data) => {
+        connection.query("DELETE FROM ?? WHERE ?? = ?", [tableName, condName, condAttr], (err, data) => {
             if (err) throw err
             cb(data)
         })

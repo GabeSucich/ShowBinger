@@ -10,6 +10,7 @@ CREATE TABLE shows(
     seasons INT NOT NULL,
     episodes_per_season INT NOT NULL,
     minutes_per_episode INT NOT NULL,
+    runtime INT NOT NULL,
     watched BOOLEAN DEFAULT false,
     PRIMARY KEY (id)
 )

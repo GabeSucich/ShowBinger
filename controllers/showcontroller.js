@@ -6,22 +6,24 @@ var Show = require('../models/show.js')
 
 router.post('/api/shows/new', (req, res) => {
     var new_show = req.body
-    Show.addNew(req.body.title, req.body.seasons, req.body.episodes, req.body.minutes, data => {
+    Show.addShow(req.body.title, req.body.seasons, req.body.episodes, req.body.minutes, req.body.runtime, data => {
         console.log("New show added")
         res.end()
     })
 })
 
 router.put('/api/shows/:id', (req, res) => {
-    var id = req.params.id
+    var id = parseInt(req.params.id)
     Show.bingeShow(id, data => {
         console.log("Show binged!")
         res.end()
     })
 })
 
+
+
 router.delete('/api/shows/:id', (req, res) => {
-    var id = req.params.id
+    var id = parseInt(req.params.id)
     Show.deleteShow(id, data => {
         console.log("Show deleted!")
         res.end()
@@ -33,9 +35,12 @@ router.get('/api/shows/all', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    Show.getAllShows(data => res.render("index", {
-        shows: data
-    }))
+    Show.getAllShows(data => {
+        res.render("index", {
+            shows: data
+
+        })
+    })
 })
 
 module.exports = router
