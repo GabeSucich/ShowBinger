@@ -9,7 +9,7 @@ $("#add-btn").on("click", function (event) {
     var platform = $("#platform").val().trim().toLowerCase()
     var runtime = Math.floor(seasons * episodes * minutes / 60)
 
-    if (!title || !seasons || !episodes || !minutes || platform) {
+    if (!title || !seasons || !episodes || !minutes || !platform) {
         alert("Make sure to fill out all of the information for your next show!")
     }
 
