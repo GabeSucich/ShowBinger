@@ -6,7 +6,7 @@ var Show = require('../models/show.js')
 
 router.post('/api/shows/new', (req, res) => {
     var new_show = req.body
-    Show.addShow(req.body.title, req.body.seasons, req.body.episodes, req.body.minutes, req.body.runtime, data => {
+    Show.addShow(req.body.title, req.body.seasons, req.body.episodes, req.body.minutes, req.body.runtime, req.body.platform, data => {
         console.log("New show added")
         res.end()
     })

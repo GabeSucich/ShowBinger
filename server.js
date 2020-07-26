@@ -12,7 +12,23 @@ app.use(express.json())
 
 var exphb = require('express-handlebars')
 
-app.engine("handlebars", exphb({defaulyLayout: "main"}))
+app.engine("handlebars", exphb({
+    defaulyLayout: "main",
+    helpers: {
+        isPlatform(platform, name) {
+            if (platform === name) {
+                return true
+            }
+            else if (platform !== "netflix" && platform !== "hulu" && name === "other") {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+    }
+})
+)
 app.set("view engine", 'handlebars')
 
 var routes = require("./controllers/showcontroller.js")

@@ -9,8 +9,8 @@ var Show = {
         orm.getByAttribute("shows", "watched", true, data => cb(data))
     },
 
-    addShow: function(title, seasons, episodes, minutes, runtime, cb) {
-        orm.addNew("shows", ['title', 'seasons', 'episodes_per_season', 'minutes_per_episode', 'runtime'], [title, seasons, episodes, minutes, runtime], data => cb(data))
+    addShow: function(title, seasons, episodes, minutes, runtime, platform, cb) {
+        orm.addNew("shows", ['title', 'seasons', 'episodes_per_season', 'minutes_per_episode', 'runtime', 'platform'], [title, seasons, episodes, minutes, runtime, platform], data => cb(data))
     },
 
     bingeShow: function(id, cb) {

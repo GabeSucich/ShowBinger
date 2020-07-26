@@ -1,0 +1,25 @@
+
+
+<div class="row">
+    <div class="col s12 m12 l12">
+        {{#if (isPlatform platform "netflix")}}
+        <div class="card red darken-1" id={{id}}>
+        {{/if}}
+        {{#if (isPlatform platform "hulu")}}
+        <div class="card green darken-1" id={{id}}>
+        {{/if}}
+        {{#if (isPlatform platform "other")}}
+        <div class="card blue-grey darken-1" id={{id}}>
+        {{/if}}
+
+            <div class="card-content white-text">
+                <span class="card-title"><i class="tiny material-icons">local_movies</i> {{title}}</span>
+                <p><i class="tiny material-icons">format_list_numbered</i> Seasons: {{seasons}}</p>
+                <p><i class="tiny material-icons">access_time</i> Approximate run time: {{runtime}} hours</p>
+            </div>
+            <div class="card-action white-text">
+                <a class="btn-flat white-text binged">Show binged!</a>
+            </div>
+        </div>
+    </div>
+</div>

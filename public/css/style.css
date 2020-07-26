@@ -1,3 +1,51 @@
 .hidden {
     display: none;
 }
+
+.main-head {
+    font-family: 'Cabin Sketch', cursive;
+}
+.sec-head{
+    margin-bottom:8%;
+    font-family: 'Cabin Sketch', cursive;
+}
+
+.container {
+    overflow: scroll !important;
+    background-color: gainsboro;
+    height: 100vh;
+}
+
+input {
+    text-align: center;
+}
+
+::placeholder {
+    color: black !important;
+    opacity: 50%;
+}
+#add-btn {
+    margin-left:auto;
+    margin-right: auto;
+}
+.new-show {
+    margin-top: 20%;
+}
+
+.heading {
+    margin-top: 5%;
+}
+
+.card-action {
+    padding:0px !important;
+}
+
+.scroll-div {
+    max-height: 60vh;
+    overflow: scroll;
+}
+
+.remove {
+    font-size: 11px !important;
+    width: 100% !important;
+}
