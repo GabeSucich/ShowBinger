@@ -50,6 +50,13 @@ input {
 }
 
 .remove {
-    font-size: 11px !important;
     width: 100% !important;
+}
+
+@media only screen and (max-width: 600px) {
+
+.new-show{
+    margin-top:5%;
+}
+
 }

@@ -1,12 +1,16 @@
 var mysql = require("mysql")
 
-var connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "password",
-    database: "netflix_db"
-})
+// FOR LOCAL TESTING
+
+// var connection = mysql.createConnection({
+//     host: "localhost",
+//     port: 3306,
+//     user: "root",
+//     password: "password",
+//     database: "netflix_db"
+// })
+
+var MYSQL_URL = process.env.JAWSDB_URL || "mysql://root:password@localhost3306/netflix_db"
 
 connection.connect(err => {
     if (err) {
