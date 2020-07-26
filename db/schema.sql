@@ -1,4 +1,8 @@
-USE eeg2g2v0xyx50cl3;
+DROP DATABASE IF EXISTS netflix_db;
+
+CREATE DATABASE netflix_db;
+
+USE netflix_db;
 
 CREATE TABLE shows(
     id INT NOT NULL AUTO_INCREMENT,
@@ -7,6 +11,7 @@ CREATE TABLE shows(
     episodes_per_season INT NOT NULL,
     minutes_per_episode INT NOT NULL,
     runtime INT NOT NULL,
+    platform VARCHAR(30) NOT NULL,
     watched BOOLEAN DEFAULT false,
     PRIMARY KEY (id)
 )
